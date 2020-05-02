@@ -25,23 +25,37 @@ const Cards = ( {data: {confirmed, recovered, deaths, lastUpdate }} ) => {
                                 separator=","
                             />    
                         </Typography>
-                        <Typography color="textSecondary">REAL DATA</Typography>
+                        <Typography color="textSecondary">{new Date(lastUpdate).toDateString()}</Typography>
                         <Typography variant="body2">Number of active cases of COVID-19</Typography>
                     </CardContent>
                 </Grid>
                 <Grid item component={Card}>
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>Recovered</Typography>
-                        <Typography variant="h5">{recovered.value}</Typography>
-                        <Typography color="textSecondary">REAL DATE</Typography>
+                        <Typography variant="h5">
+                            <CountUp
+                                start={0}
+                                end={recovered.value}
+                                duration={2.5}
+                                separator=","
+                            />    
+                        </Typography>
+                        <Typography color="textSecondary">{new Date(lastUpdate).toDateString()}</Typography>
                         <Typography variant="body2">Number of recoveries of COVID-19</Typography>
                     </CardContent>
                 </Grid>
                 <Grid item component={Card}>
                     <CardContent>
                         <Typography color="textSecondary" gutterBottom>Deaths</Typography>
-                        <Typography variant="h5">{deaths.value}</Typography>
-                        <Typography color="textSecondary">REAL DATE</Typography>
+                        <Typography variant="h5">
+                            <CountUp
+                                start={0}
+                                end={deaths.value}
+                                duration={2.5}
+                                separator=","
+                            />    
+                        </Typography>
+                        <Typography color="textSecondary">{new Date(lastUpdate).toDateString()}</Typography>
                         <Typography variant="body2">Number of deaths of COVID-19</Typography>
                     </CardContent>
                 </Grid>
